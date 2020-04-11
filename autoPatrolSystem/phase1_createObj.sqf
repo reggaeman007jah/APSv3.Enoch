@@ -1,0 +1,85 @@
+
+_sentPos = _this select 0; // objective point for any new mission 
+_sentOrigin = _this select 1; // starting point for any new mission
+
+RGG_missionOrigin = _sentOrigin;
+
+RGG_patrol_obj = [_sentPos, 600, 800] call BIS_fnc_findSafePos; // generate patrol obj between 600m and 800m away, and always over land 
+
+// delete any existing opfor RF points 
+deleteMarker "Point 1";
+deleteMarker "Point 2";
+deleteMarker "Point 3";
+
+// Mission Origin 
+deleteMarker "missionOrigin";
+_base = createMarker ["missionOrigin", RGG_missionOrigin];
+_base setMarkerShape "ELLIPSE";
+_base setMarkerColor "ColorGreen";
+_base setMarkerSize [70, 70];
+_base setMarkerAlpha 0.5;
+sleep 0.1;
+_base setMarkerSize [80, 80];
+_base setMarkerAlpha 0.6;
+sleep 0.1;
+_base setMarkerSize [90, 90];
+_base setMarkerAlpha 0.7;
+sleep 0.1;
+_base setMarkerSize [100, 100];
+_base setMarkerAlpha 0.8;
+sleep 0.1;
+_base setMarkerSize [110, 110];
+_base setMarkerAlpha 0.9;
+sleep 1;
+
+// AO - grey circle within which all calcs take place
+deleteMarker "BattleArea"; 
+_battleArea = createMarker ["BattleArea", RGG_patrol_obj];
+_battleArea setMarkerShape "ELLIPSE";
+_battleArea setMarkerColor "ColorBlack";
+_battleArea setMarkerSize [1050, 1050];
+_battleArea setMarkerAlpha 0.1;
+sleep 0.1;
+_battleArea setMarkerSize [1100, 1100];
+_battleArea setMarkerAlpha 0.2;
+sleep 0.1;
+_battleArea setMarkerSize [1150, 1150];
+_battleArea setMarkerAlpha 0.3;
+sleep 0.1;
+_battleArea setMarkerSize [1200, 1200];
+_battleArea setMarkerAlpha 0.4;
+sleep 0.1;
+_battleArea setMarkerSize [1250, 1250];
+_battleArea setMarkerAlpha 0.5;
+sleep 0.1;
+_battleArea setMarkerSize [1750, 1750];
+
+// OBJ - patrol objective 
+deleteMarker "Objective 1";
+_objective1 = createMarker ["Objective 1", RGG_patrol_obj];
+_objective1 setMarkerShape "ELLIPSE";
+_objective1 setMarkerColor "ColorRed";
+_objective1 setMarkerSize [100, 100];
+_objective1 setMarkerAlpha 0.5;
+sleep 0.1;
+_objective1 setMarkerSize [120, 120];
+_objective1 setMarkerAlpha 0.6;
+sleep 0.1;
+_objective1 setMarkerSize [130, 130];
+_objective1 setMarkerAlpha 0.7;
+sleep 0.1;
+_objective1 setMarkerSize [140, 140];
+_objective1 setMarkerAlpha 0.8;
+sleep 0.1;
+_objective1 setMarkerSize [150, 150];
+_objective1 setMarkerAlpha 0.9;
+sleep 0.1;
+_objective1 setMarkerSize [250, 250];
+sleep 0.1;
+_objective1 setMarkerSize [450, 450];
+sleep 1;
+
+execVM "autoPatrolSystem\phase2_createOpforWave1.sqf";
+systemchat "debug --- phase2_createOpforWave1 ACTIVATED";
+"MP debug --- phase2_createOpforWave1 ACTIVATED" remoteExec ["systemChat", 0, true];
+
