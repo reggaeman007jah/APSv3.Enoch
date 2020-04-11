@@ -54,13 +54,14 @@ while {monitorDefence} do {
 		systemChat (format ["The Patrol has been compromised, with %1 units left in the fight. Reinforcements are inbound.. ", _blueforCount]);
 		"Patrol has been compromised. Reinforcements are inbound.. " remoteExec ["systemChat", 0, true]; // make this better
 		// [RGG_patrol_obj, RGG_missionOrigin] execVM "autoPatrolSystem\callRF.sqf"; // send RF units into area 
+		// PARADOP UNITS HERE!!!
 	};
 
 	if (_blueforCount <= 3)  then 
 	{
 		systemChat "The Patrol has been Lost - Mission Failed.. ";
-		"The Patrol has been Lost - mission Failed..  " remoteExec ["systemChat", 0, true]; // make this better
-		monitorDefence = false;
+		"The Patrol has been Lost - mission Failed..  " remoteExec ["systemChat", 0, true]; // make this better // MAYBE -1 PLATOON SCORE
+		// monitorDefence = false;
 		// end state FAIL - what happens here???
 	};
 
