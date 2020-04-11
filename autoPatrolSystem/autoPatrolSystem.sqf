@@ -6,8 +6,6 @@ Auto Patrol System v2
 
 RGG_initStartPos = getPos ammo1;
 
-// make markers 
-
 // PERMA BASE - acts as blufor base area, can be used for RF/RE-UP tasks 
 sleep 2;
 // deleteMarker "permabase";
@@ -41,3 +39,8 @@ sleep 0.2;
 [RGG_initStartPos] execVM "autoPatrolSystem\autoPatrolSystemParams.sqf";
 systemchat "debug --- autoPatrolSystemParams ACTIVATED";
 "MP debug --- autoPatrolSystemParams ACTIVATED" remoteExec ["systemChat", 0, true];
+// sleep 0.2;
+// execVM "autoPatrolSystem\autoReveal.sqf";
+// systemchat "debug --- autoReveal ACTIVATED";
+// "MP debug --- autoReveal ACTIVATED" remoteExec ["systemChat", 0, true]; 
+// currently this messes with first wave - i need a smaller area for this to work at this stage 

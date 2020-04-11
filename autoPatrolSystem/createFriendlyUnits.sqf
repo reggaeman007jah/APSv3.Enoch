@@ -5,7 +5,7 @@ _spawnPos = _this select 0;
 
 for "_i" from 1 to 8 do {
 	bluGroup = createGroup west;
-	_pos = [_spawnPos, 0, 30] call BIS_fnc_findSafePos;
+	_pos = [_spawnPos, 0, 60] call BIS_fnc_findSafePos;
 	_unit = bluGroup createUnit ["UK3CB_BAF_Rifleman_MTP", _pos, [], 0.1, "none"]; 
 
 	sleep 1;
@@ -21,7 +21,7 @@ for "_i" from 1 to 8 do {
 
 for "_i" from 1 to 4 do {
 	bluGroup = createGroup west;
-	_pos = [_spawnPos, 0, 30] call BIS_fnc_findSafePos;
+	_pos = [_spawnPos, 0, 60] call BIS_fnc_findSafePos;
 	_unit = bluGroup createUnit ["UK3CB_BAF_MGGPMG_MTP", _pos, [], 0.1, "none"]; 
 
 	sleep 1;
@@ -37,7 +37,7 @@ for "_i" from 1 to 4 do {
 
 for "_i" from 1 to 2 do {
 	bluGroup = createGroup west;
-	_pos = [_spawnPos, 0, 30] call BIS_fnc_findSafePos;
+	_pos = [_spawnPos, 0, 60] call BIS_fnc_findSafePos;
 	_unit = bluGroup createUnit ["UK3CB_BAF_LSW_MTP", _pos, [], 0.1, "none"]; 
 
 	sleep 1;
@@ -53,7 +53,7 @@ for "_i" from 1 to 2 do {
 
 for "_i" from 1 to 2 do {
 	bluGroup = createGroup west;
-	_pos = [_spawnPos, 0, 30] call BIS_fnc_findSafePos;
+	_pos = [_spawnPos, 0, 60] call BIS_fnc_findSafePos;
 	_unit = bluGroup createUnit ["UK3CB_BAF_Grenadier_MTP", _pos, [], 0.1, "none"]; 
 
 	sleep 1;
@@ -69,7 +69,7 @@ for "_i" from 1 to 2 do {
 
 for "_i" from 1 to 2 do {
 	bluGroup = createGroup west;
-	_pos = [_spawnPos, 0, 30] call BIS_fnc_findSafePos;
+	_pos = [_spawnPos, 0, 60] call BIS_fnc_findSafePos;
 	_unit = bluGroup createUnit ["UK3CB_BAF_Marksman_MTP", _pos, [], 0.1, "none"]; 
 
 	sleep 1;
@@ -85,7 +85,7 @@ for "_i" from 1 to 2 do {
 
 for "_i" from 1 to 2 do {
 	bluGroup = createGroup west;
-	_pos = [_spawnPos, 0, 30] call BIS_fnc_findSafePos;
+	_pos = [_spawnPos, 0, 60] call BIS_fnc_findSafePos;
 	_unit = bluGroup createUnit ["UK3CB_BAF_Medic_MTP", _pos, [], 0.1, "none"]; 
 
 	sleep 1;
@@ -101,7 +101,7 @@ for "_i" from 1 to 2 do {
 
 for "_i" from 1 to 2 do {
 	bluGroup = createGroup west;
-	_pos = [_spawnPos, 0, 30] call BIS_fnc_findSafePos;
+	_pos = [_spawnPos, 0, 60] call BIS_fnc_findSafePos;
 	_unit = bluGroup createUnit ["UK3CB_BAF_Sharpshooter_MTP", _pos, [], 0.1, "none"]; 
 
 	sleep 1;
@@ -117,7 +117,7 @@ for "_i" from 1 to 2 do {
 
 for "_i" from 1 to 1 do {
 	bluGroup = createGroup west;
-	_pos = [_spawnPos, 0, 30] call BIS_fnc_findSafePos;
+	_pos = [_spawnPos, 0, 60] call BIS_fnc_findSafePos;
 	_unit = bluGroup createUnit ["UK3CB_BAF_Engineer_MTP", _pos, [], 0.1, "none"]; 
 
 	sleep 1;
@@ -133,7 +133,7 @@ for "_i" from 1 to 1 do {
 
 for "_i" from 1 to 1 do {
 	bluGroup = createGroup west;
-	_pos = [_spawnPos, 0, 30] call BIS_fnc_findSafePos;
+	_pos = [_spawnPos, 0, 60] call BIS_fnc_findSafePos;
 	_unit = bluGroup createUnit ["UK3CB_BAF_Explosive_MTP", _pos, [], 0.1, "none"]; 
 
 	sleep 1;
@@ -149,7 +149,7 @@ for "_i" from 1 to 1 do {
 
 for "_i" from 1 to 1 do {
 	bluGroup = createGroup west;
-	_pos = [_spawnPos, 0, 30] call BIS_fnc_findSafePos;
+	_pos = [_spawnPos, 0, 60] call BIS_fnc_findSafePos;
 	_unit = bluGroup createUnit ["UK3CB_BAF_Officer_MTP", _pos, [], 0.1, "none"]; 
 
 	sleep 1;
@@ -165,7 +165,7 @@ for "_i" from 1 to 1 do {
 
 for "_i" from 1 to 1 do {
 	bluGroup = createGroup west;
-	_pos = [_spawnPos, 0, 30] call BIS_fnc_findSafePos;
+	_pos = [_spawnPos, 0, 60] call BIS_fnc_findSafePos;
 	_unit = bluGroup createUnit ["UK3CB_BAF_RO_MTP", _pos, [], 0.1, "none"]; 
 
 	sleep 1;
@@ -178,6 +178,5 @@ for "_i" from 1 to 1 do {
 	_unit setBehaviour "COMBAT";
 	_unit doMove _endPoint1;
 };
-
 
 execVM "autoPatrolSystem\checkBluforRF.sqf";
