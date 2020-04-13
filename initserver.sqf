@@ -37,3 +37,5 @@ while {true} do {
 	// systemChat "cleanup";
 	{ deleteVehicle _x } forEach allDead;
 };
+
+heliRecon addAction ["Drop Smoke", "heliDrops\dropSmoke.sqf"];	
