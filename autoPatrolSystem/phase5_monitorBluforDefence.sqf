@@ -91,7 +91,7 @@ while {monitorDefence} do {
 		"MP debug --- phase1_createObj ACTIVATED" remoteExec ["systemChat", 0, true];
 
 		sleep 10; 
-		hint "patrol is moving out";
+		hint "Well done, the patrol has held the position successfully and is now moving to the next point";
 		_units = allUnits inAreaArray "missionOrigin";
 		{
 			_randomDir = selectRandom [270, 310, 00, 50, 90];

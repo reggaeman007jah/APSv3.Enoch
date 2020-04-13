@@ -1,8 +1,12 @@
 
-sleep 600;
-// er is this right????
+for "_i" from 1 to 10 do {
+	systemChat "insurance check";
+	sleep 60;
+};
+
 if (monitorDefence) then {
 
+	hint "INSURANCE MOVE";
 	systemChat "Debug - we've been here long enough, let's move out .. !!!";
 	"MP debug - we've been here long enough, let's move out .. !!!" remoteExec ["systemChat", 0, true];	
 	monitorDefence = false;
@@ -24,7 +28,7 @@ if (monitorDefence) then {
 		_randomDist = selectRandom [20, 22, 24, 26, 28, 30];
 		_unitDest = [RGG_patrol_obj, 5, 20] call BIS_fnc_findSafePos;
 		_endPoint1 = _unitDest getPos [_randomDist,_randomDir];
-
+		SLEEP 2;
 		_x setBehaviour "COMBAT";
 		_x doMove _endPoint1;
 	} forEach _units;
