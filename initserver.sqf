@@ -8,6 +8,11 @@ execVM "autoPatrolSystem\autoPatrolSystem.sqf";
 systemchat "debug --- APS ACTIVATED";
 sleep 0.5;
 
+// initialise Heli Systems
+execVM "autoPatrolSystem\heliSystems\heliSystemsInit.sqf";
+systemchat "debug --- Heli Systems ACTIVATED";
+sleep 0.5;
+
 // SF Manager
 //player addAction ["Pick up SF", "autoPatrolSystem\callSF.sqf"];	
 // player setVariable ["isBusy", 111]; // i.e. not busy and needs a task
@@ -37,8 +42,6 @@ sleep 0.5;
 // 	// systemChat "cleanup";
 // 	{ deleteVehicle _x } forEach allDead;
 // };
-
-heliRecon addAction ["Drop Smoke", "heliDrops\dropSmoke.sqf"];	
 
 /*
 how to do garbage control better ...
