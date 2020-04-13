@@ -1,4 +1,5 @@
 
+
 _rndOp1 = selectRandom [4, 6, 8, 10, 12];
 
 for "_i" from 1 to _rndOp1 do {
@@ -18,6 +19,8 @@ for "_i" from 1 to _rndOp1 do {
 };
 
 RFCHECK = true;
+
+
 
 while {RFCHECK} do {
 	_opforCount1 = 0;
@@ -44,8 +47,8 @@ while {RFCHECK} do {
 		"MP debug --- phase4_createOpforRF ACTIVATED" remoteExec ["systemChat", 0, true];
 
 	} else {
-		systemChat "zzz MSG you still have work to do in taking the objective";
-		"zzz MP MSG you still have work to do in taking the objective" remoteExec ["systemChat", 0, true];	
+		systemChat "MSG you still have work to do in taking the objective";
+		"MP MSG you still have work to do in taking the objective" remoteExec ["systemChat", 0, true];	
 	};
 	sleep 90;
 };

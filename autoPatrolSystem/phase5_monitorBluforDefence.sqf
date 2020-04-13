@@ -1,3 +1,11 @@
+
+/*
+This script checks how well the defence of the objective is going. If the enemy is destroyed, the team can progress to the next stage of the mission.
+An issue occurs when - for whatever reason - enemy do not engage. This could be due to being spawned in rocks, prevented from engaging due to a building or wall etc.
+Without an insurance policy, this lack of engagement could draw the mission to a standstill. So, a secondary system is needed to ensure that things always progress as a certain time regardless of engagement.
+
+*/
+
 systemChat "debug --- phase 5 - defence"; 	
 "MP debug --- phase 5 - defence" remoteExec ["systemChat", 0, true];	
 
@@ -8,6 +16,8 @@ monitorDefence = true;
 _RGG_reinforcementTrigger = 10;
 
 systemChat format ["Intel suggests %1 enemy units are advancing from %2 key position(s) in your immediate area", _numberOfAttackers, _numberOfAttackPoints];
+
+execVM "autoPatrolSystem\insuranceSystems\phase5Timer.sqf";
 
 while {monitorDefence} do {
 
@@ -72,9 +82,9 @@ while {monitorDefence} do {
 		monitorDefence = false;
 		// do stats?
 		// consolidate injured?
-		[RGG_initStartPos, RGG_initStartPos] execVM "autoPatrolSystem\phase1_createObj.sqf";
-		systemchat "debug --- phase1_createObj ACTIVATED";
-		"MP debug --- phase1_createObj ACTIVATED" remoteExec ["systemChat", 0, true];
+		// [RGG_initStartPos, RGG_initStartPos] execVM "autoPatrolSystem\phase1_createObj.sqf";
+		// systemchat "debug --- phase1_createObj ACTIVATED";
+		// "MP debug --- phase1_createObj ACTIVATED" remoteExec ["systemChat", 0, true];
 		// [RGG_patrol_obj, ] execVM "";
 		[RGG_patrol_obj, RGG_patrol_obj] execVM "autoPatrolSystem\phase1_createObj.sqf";
 		systemchat "debug --- phase1_createObj ACTIVATED";
