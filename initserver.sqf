@@ -32,10 +32,19 @@ sleep 0.5;
 // player addAction ["Test findSafeSpot output", "landCheck\landCheck.sqf"];
 
 // garbage collection - this needs to be mission-based
-while {true} do {
-	sleep 600;
-	// systemChat "cleanup";
-	{ deleteVehicle _x } forEach allDead;
-};
+// while {true} do {
+// 	sleep 600;
+// 	// systemChat "cleanup";
+// 	{ deleteVehicle _x } forEach allDead;
+// };
 
 heliRecon addAction ["Drop Smoke", "heliDrops\dropSmoke.sqf"];	
+
+/*
+how to do garbage control better ...
+
+having a basic timer cycle can lead to immersion break 
+so, maybe at a key point you create a new marker, on the position of the old obj marker - "cleanup" 
+then set a timer to enable players to leave the area, then do cleanup just in that zone ... better chance that noone will see the function happen ..
+
+*/
