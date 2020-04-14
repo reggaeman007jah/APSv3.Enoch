@@ -5,6 +5,7 @@ Maybe use this as a timer system?
 _defendStartTime = time;
 systemChat format ["patrol defence started at %1 seconds into mission", _defendStartTime];
 */
+
 systemChat "debug --- blufor moving into defensive positions"; 	
 "MP debug --- blufor moving into defensive positions" remoteExec ["systemChat", 0, true];
 
@@ -15,28 +16,15 @@ _bluforDefence1 = allUnits inAreaArray "Objective 1";
 {
 	// systemChat "debug - BLUEDEFEND STATE - Blue Unit Counted";
 	// "MP debug - BLUEDEFEND STATE - Blue Unit Counted" remoteExec ["systemChat", 0, true];
-	_Dir = random 360;
-	_Dist = selectRandom [14, 16, 18, 20]; 
-	_defendPoint1 = RGG_patrol_obj getPos [_Dist,_Dir]; // moves units into a rough 360 defensive circle
+	_dir = random 360;
+	_dist = selectRandom [14, 16, 18, 20]; 
+	_defendPoint = RGG_patrol_obj getPos [_dist, _dir]; // moves units into a rough 360 defensive circle
 	_x setBehaviour "COMBAT";
-	_x doMove _defendPoint1;
+	_x doMove _defendPoint;
 	sleep 1;
 } forEach _bluforDefence1;	
 
 // then create and move enemy into attack 
-
-/*
-
-I need to decide 
-how many opfor 
-how many directions they are split into 
-how many waves 
-
-so, 15 20 25 30 each wave 
-from 1 - 3 waves 
-from 8 different directions 
-
-*/
 
 // _enemyWaves = selectRandom [1,2,3]; // do this once
 
@@ -45,7 +33,6 @@ from 8 different directions
 
 // work out waves later - for now keep things alternating attack / defend 
 
-hint "switch test";
 systemChat "op retaliatory attackers being created - check perf";
 
 _outcome = selectRandom [1,2,3]; 
@@ -65,7 +52,7 @@ _rndOp1 = selectRandom [25, 30, 35, 40, 45, 50]; // RF force size
 switch (true) do {	
 	case (ONEPOINT): {
 		systemChat "switch test ok 1";
-		_pos1 = [RGG_patrol_obj, 400, 500] call BIS_fnc_findSafePos; // single point spawn 400-500m away from Dest
+		_pos1 = [RGG_patrol_obj, 400, 700] call BIS_fnc_findSafePos; // single point spawn 400-700m away from Dest
 		deleteMarker "Point 1";
 		deleteMarker "Point 2";
 		deleteMarker "Point 3";
@@ -86,11 +73,12 @@ switch (true) do {
 			_moveTo = RGG_patrol_obj getPos [5, _randomDir]; 
 			_unit doMove _moveTo;
 		}; 
+		ONEPOINT = false;
 	};
 	case (TWOPOINT): {
 		systemChat "switch test ok 2";
-		_pos1 = [RGG_patrol_obj, 400, 500] call BIS_fnc_findSafePos; // single point spawn 400-500m away from Dest
-		_pos2 = [RGG_patrol_obj, 400, 500] call BIS_fnc_findSafePos; // single point spawn 400-500m away from Dest
+		_pos1 = [RGG_patrol_obj, 400, 700] call BIS_fnc_findSafePos; // single point spawn 400-700m away from Dest
+		_pos2 = [RGG_patrol_obj, 400, 700] call BIS_fnc_findSafePos; // single point spawn 400-700m away from Dest
 		deleteMarker "Point 3";
 		deleteMarker "Point 1";
 		_objective1 = createMarker ["Point 1", _pos1];
@@ -116,12 +104,13 @@ switch (true) do {
 			_moveTo = RGG_patrol_obj getPos [5, _randomDir]; 
 			_unit doMove _moveTo;
 		}; 
+		TWOPOINT = false;
 	};
 	case (THREEPOINT): {	
 		systemChat "switch test ok 3";
-		_pos1 = [RGG_patrol_obj, 300, 400] call BIS_fnc_findSafePos; // single point spawn 400-500m away from Dest
-		_pos2 = [RGG_patrol_obj, 300, 400] call BIS_fnc_findSafePos; // single point spawn 400-500m away from Dest
-		_pos3 = [RGG_patrol_obj, 300, 400] call BIS_fnc_findSafePos; // single point spawn 400-500m away from Dest
+		_pos1 = [RGG_patrol_obj, 300, 700] call BIS_fnc_findSafePos; // single point spawn 400-700m away from Dest
+		_pos2 = [RGG_patrol_obj, 300, 700] call BIS_fnc_findSafePos; // single point spawn 400-700m away from Dest
+		_pos3 = [RGG_patrol_obj, 300, 700] call BIS_fnc_findSafePos; // single point spawn 400-700m away from Dest
 		deleteMarker "Point 1";
 		_objective1 = createMarker ["Point 1", _pos1];
 		_objective1 setMarkerShape "ELLIPSE";
@@ -151,9 +140,10 @@ switch (true) do {
 			_moveTo = RGG_patrol_obj getPos [5, _randomDir]; 
 			_unit doMove _moveTo;
 		}; 
+		THREEPOINT = false;
 	};
 };
 
 _smoke = createVehicle ["G_40mm_smokeYELLOW", RGG_patrol_obj, [], 0, "none"];
 
-[_rndOp1, _outcome] execVM "autoPatrolSystem\phase5_monitorBluforDefence.sqf"; // pass in no. of enemy units / no. of origin points
+[_rndOp1, _outcome] execVM "autoPatrolSystem\phase5_monitorBluforDefence.sqf"; // pass in no. of enemy units / no. of origin points / vars to inform intel message
