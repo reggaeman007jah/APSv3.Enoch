@@ -1,3 +1,11 @@
+/*
+This is meant to ensure that new units are created and sent in to support depleted teams in the field 
+however I now see this is an expensive check, and also very inefficient 
+
+toDo / April 2002 / develop a better system to trigger RF 
+Initial idea - run this same code but only at the start of each mission phase, rather than every 180 seconds!
+*/
+
 while {true} do {
 
 	sleep 180;
