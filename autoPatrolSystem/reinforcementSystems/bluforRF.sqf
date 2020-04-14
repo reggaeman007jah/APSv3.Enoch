@@ -1,5 +1,6 @@
 
 _bluCount = west countSide allUnits;
+// this is 18 to incorporate playable units and perma-base defences 
 
 if ((_bluCount) < 18)  then {
 	hint "REINFORCEMENTS ARE INBOUND";
