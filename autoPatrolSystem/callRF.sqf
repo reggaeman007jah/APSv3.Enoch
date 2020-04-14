@@ -1,4 +1,7 @@
 
+// adding this check to ensure this is not being called from anywhere 
+hint "YOU SHOULD NOT BE SEEING THIS!";
+
 /* CALL RF ---------------------------------------------------------------------------------------------------
 
 Will replenish lost troops as per trigger rules
