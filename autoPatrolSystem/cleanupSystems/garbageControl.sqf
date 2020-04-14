@@ -9,7 +9,6 @@
 systemChat "get ready to check garbage...";
 sleep 5;
 
-
 // _objective1 = createMarker ["garbageCollection", _cleanupMarkerPos];
 // _objective1 setMarkerShape "ELLIPSE";
 // _objective1 setMarkerColor "ColorYellow";
