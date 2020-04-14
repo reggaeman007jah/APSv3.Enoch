@@ -14,3 +14,5 @@ Count number of times AH-6 rearmed
 
 
 */
+
+patrolPointsTaken = patrolPointsTaken + 1;

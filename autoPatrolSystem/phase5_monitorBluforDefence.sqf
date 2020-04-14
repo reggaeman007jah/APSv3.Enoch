@@ -103,6 +103,12 @@ while {monitorDefence} do {
 
 		sleep 10; 
 		hint "Well done, the patrol has held the position successfully and is now moving to the next point";
+
+		// track progress 
+		execVM "autoPatrolSystem\counterSystems\counterSystems.sqf";
+		systemchat "debug --- mission count amended";
+		"MP debug --- mission count amended" remoteExec ["systemChat", 0, true];
+
 		_units = allUnits inAreaArray "missionOrigin";
 		{
 			_randomDir = selectRandom [270, 310, 00, 50, 90];

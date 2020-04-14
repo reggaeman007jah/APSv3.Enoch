@@ -16,3 +16,8 @@ TWOPOINT = false;
 THREEPOINT = false;
 
 monitorDefence = false;
+
+//base-counter var for tracking how many missions have been completed 
+patrolPointsTaken = 0;
+
+// you could maybe also track mission time on each 'take' to track time for each mission point?
