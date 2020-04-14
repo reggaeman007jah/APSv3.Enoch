@@ -10,7 +10,7 @@ systemChat "debug --- phase 5 - defence";
 "MP debug --- phase 5 - defence" remoteExec ["systemChat", 0, true];	
 
 // HERE WE CHECK IF BLUFOR NEED RF 
-execVM "autoPatrolSystem\reinforcementSystems\bloforRF.sqf";
+execVM "autoPatrolSystem\reinforcementSystems\bluforRF.sqf";
 systemchat "debug --- checking for blufor RF";
 "MP debug --- checking for blufor RF" remoteExec ["systemChat", 0, true];
 
@@ -32,19 +32,7 @@ while {monitorDefence} do {
 	// _opfor = (side _x == opfor) inAreaArray "BattleArea";
 	// hint str _opfor;
 			
-	// this next bit is to ensure opfor dont get stuck somewhere and delay mission progression - if works, put in separate script to run occasionally 		
-	_opfor = [];
-	{if ((side _x) == east) then {_opfor pushBack _x}} forEach allUnits;
 
-	{
-		_Dir = random 360;
-		_Dist = selectRandom [1, 5, 10]; 
-		_moveTo = RGG_patrol_obj getPos [_Dist,_Dir]; 
-		_x setBehaviour "COMBAT";
-		_x doMove _moveTo;
-		systemChat "New OPFOR move orders";
-		sleep 1;
-	} forEach _opfor;	
 
 	_opforCount = 0;
 	_blueforCount = 0;

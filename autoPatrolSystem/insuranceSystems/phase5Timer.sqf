@@ -1,12 +1,34 @@
+/*
+April 2020 - untested
+This system does two things - first it tries (twice) to push opfor openly towards the objective, thereby preventing stalemate situations (prone v prone) 
+But it also ensures that if the above system does not work, the patrol will only wait 10 minutes at a point before moving onto the next point.
+*/
 
-for "_i" from 1 to 10 do {
-	systemChat "insurance check";
-	sleep 60;
+for "_i" from 1 to 2 do {
+	
+	sleep 300;
+	systemChat "insurance move";
+
+	// this next bit is to ensure opfor dont get stuck somewhere and delay mission progression 
+// it used to be in a loop, now it only runs once (twice?)		
+	_opfor = [];
+	{if ((side _x) == east) then {_opfor pushBack _x}} forEach allUnits;
+
+	{
+		_Dir = random 360;
+		_Dist = selectRandom [1, 5, 10]; 
+		_moveTo = RGG_patrol_obj getPos [_Dist,_Dir]; 
+		_x setBehaviour "COMBAT";
+		_x doMove _moveTo;
+		systemChat "New OPFOR move orders";
+		sleep 1;
+	} forEach _opfor;	
+
 };
 
 if (monitorDefence) then {
 
-	hint "INSURANCE MOVE";
+	hint "INSURANCE PROGRESSION";
 	systemChat "Debug - we've been here long enough, let's move out .. !!!";
 	"MP debug - we've been here long enough, let's move out .. !!!" remoteExec ["systemChat", 0, true];	
 	monitorDefence = false;
