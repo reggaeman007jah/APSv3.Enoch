@@ -14,6 +14,10 @@ I also don't know if this system will affect the first wave attackers that are g
 
 */
 
+// CAN I DELETE THIS?
+
+hint "YOU SHOULD NOT SEE THIS";
+
 while {true} do {
 	_opfor = [];
 	{if ((side _x) == east) then {_opfor pushBack _x}} forEach allUnits;

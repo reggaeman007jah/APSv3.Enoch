@@ -3,6 +3,7 @@ there is a lot of wet code here - consider making functions to issue move orders
 */
 sleep 3;
 
+// by parsing a location in here i can easily gen blufor platoons from anywhere, but for now they are only spawning at the perma-base 
 _spawnPos = _this select 0;
 
 systemChat "blu units being created - check perf";
@@ -182,5 +183,7 @@ for "_i" from 1 to 1 do {
 	_unit setBehaviour "COMBAT";
 	_unit doMove _endPoint1;
 };
+
+systemChat "blu spawner complete "
 
 // execVM "autoPatrolSystem\checkBluforRF.sqf";
