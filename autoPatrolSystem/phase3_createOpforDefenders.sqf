@@ -19,13 +19,15 @@ for "_i" from 1 to _rndOp1 do {
 	"MP debug --- opfor dug in defender unit created" remoteExec ["systemChat", 0, true];		
 };
 
-RFCHECK = true;
+systemChat "op defenders spawn complete";
+
+RFCHECK = true; // action - confirm if this is still needed 
 
 // HERE WE CHECK IF BLUFOR NEED RF 
 execVM "autoPatrolSystem\reinforcementSystems\bluforRF.sqf";
 systemchat "debug --- checking for blufor RF";
 "MP debug --- checking for blufor RF" remoteExec ["systemChat", 0, true];
-
+// this is one of two points where patrol reinforcements are considered - previously this was every 90 seconds, now it is more lean and cheap
 
 while {RFCHECK} do {
 	systemChat "RFCHECK perf check here";
@@ -43,18 +45,19 @@ while {RFCHECK} do {
 
 	// hint format ["debug --- OPFOR DEFENDERS = %1", _opforCount1];
 
-	if ((_opforCount1) <= 2)  then // this is the decider-value as to whether the second round of enemy moves in
+	if ((_opforCount1) <= 3)  then // this is the decider-value as to whether the second round of enemy moves in
 	{
 		systemChat "Debug - Initial defenders neutralised, prepare for OPFOR RF .. !!!";
 		"MP debug - Initial defenders neutralised, prepare for OPFOR RF .. !!!" remoteExec ["systemChat", 0, true];	
 		RFCHECK = false;
+		sleep 1;
 		execVM "autoPatrolSystem\phase4_createOpforRF.sqf";
 		systemchat "debug --- phase4_createOpforRF ACTIVATED";
 		"MP debug --- phase4_createOpforRF ACTIVATED" remoteExec ["systemChat", 0, true];
 
 	} else {
-		systemChat "MSG you still have work to do in taking the objective";
-		"MP MSG you still have work to do in taking the objective" remoteExec ["systemChat", 0, true];	
+		systemChat "Patrol Point has not yet been cleared";
+		"MP Patrol Point has not yet been cleared" remoteExec ["systemChat", 0, true];	
 	};
 	sleep 90;
 };
