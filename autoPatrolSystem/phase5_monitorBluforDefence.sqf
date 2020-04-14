@@ -94,6 +94,12 @@ while {monitorDefence} do {
 		[RGG_patrol_obj, RGG_patrol_obj] execVM "autoPatrolSystem\phase1_createObj.sqf";
 		systemchat "debug --- phase1_createObj ACTIVATED";
 		"MP debug --- phase1_createObj ACTIVATED" remoteExec ["systemChat", 0, true];
+		sleep 1;
+		// trigger delayed cleanup 
+		_cleanupPos = RGG_patrol_obj; // this ensures that a snapshot of the location is sent to the cleanup script - a global var will always be the most current version and so will not suit this purpose 
+		[_cleanupPos] execVM "autoPatrolSystem\cleanupSystems\garbageControl.sqf";
+		systemchat "debug --- cleanup script triggered";
+		"MP debug --- cleanup script triggered" remoteExec ["systemChat", 0, true];
 
 		sleep 10; 
 		hint "Well done, the patrol has held the position successfully and is now moving to the next point";
