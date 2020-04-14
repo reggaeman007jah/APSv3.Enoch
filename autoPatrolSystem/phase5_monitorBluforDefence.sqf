@@ -9,6 +9,11 @@ Without an insurance policy, this lack of engagement could draw the mission to a
 systemChat "debug --- phase 5 - defence"; 	
 "MP debug --- phase 5 - defence" remoteExec ["systemChat", 0, true];	
 
+// HERE WE CHECK IF BLUFOR NEED RF 
+execVM "autoPatrolSystem\reinforcementSystems\bloforRF.sqf";
+systemchat "debug --- checking for blufor RF";
+"MP debug --- checking for blufor RF" remoteExec ["systemChat", 0, true];
+
 _numberOfAttackers = _this select 0;
 _numberOfAttackPoints = _this select 1;
 
@@ -102,12 +107,7 @@ while {monitorDefence} do {
 			_x setBehaviour "COMBAT";
 			_x doMove _endPoint1;
 		} forEach _units;
-	
-	
 	};
+
 	sleep 30;
 };
-
-	
-
-

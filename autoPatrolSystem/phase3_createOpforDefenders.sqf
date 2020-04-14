@@ -20,6 +20,10 @@ for "_i" from 1 to _rndOp1 do {
 
 RFCHECK = true;
 
+// HERE WE CHECK IF BLUFOR NEED RF 
+execVM "autoPatrolSystem\reinforcementSystems\bloforRF.sqf";
+systemchat "debug --- checking for blufor RF";
+"MP debug --- checking for blufor RF" remoteExec ["systemChat", 0, true];
 
 
 while {RFCHECK} do {
