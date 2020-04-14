@@ -9,14 +9,14 @@ sleep 300;
 systemChat "get ready to check garbage...";
 sleep 5;
 
-deleteMarker "garbageCollection";
+
 _objective1 = createMarker ["garbageCollection", _cleanupMarkerPos];
 _objective1 setMarkerShape "ELLIPSE";
 _objective1 setMarkerColor "ColorYellow";
-_objective1 setMarkerSize [450, 450];
+_objective1 setMarkerSize [350, 350];
 sleep 3;
 {if ((getMarkerPos "garbageCollection" distance _x) => 450) then {deleteVehicle _x}} forEach allDead;
-
+deleteMarker "garbageCollection";
 /*
 ^^^ April 2020 UNTESTED 
 */
