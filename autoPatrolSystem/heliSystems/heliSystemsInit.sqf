@@ -20,4 +20,6 @@ decide if medivac should be auto, or addAction controlled
 
 heliRecon addAction ["Drop Smoke", "heliDrops\dropSmokeRecon.sqf"];	
 heliAttack addAction ["Drop Smoke", "heliDrops\dropSmokeAttack.sqf"];	
-heliTransport addAction ["Drop Smoke", "heliDrops\dropSmokeTransport.sqf"];	
+heliTransport addAction ["Drop Smoke", "heliDrops\dropSmokeTransport.sqf"];
+heliTransport addAction ["Medivac Board", "autoPatrolSystem\heliSystems\medivacBoard.sqf"];		
+heliTransport addAction ["Medivac unoard", "autoPatrolSystem\heliSystems\medivacUnboard.sqf"];	
