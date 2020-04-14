@@ -28,6 +28,7 @@ systemchat "debug --- checking for blufor RF";
 
 
 while {RFCHECK} do {
+	systemChat "RFCHECK perf check here";
 	_opforCount1 = 0;
 	_blueforCount1 = 0;
 	_units = allUnits inAreaArray "Objective 1";
