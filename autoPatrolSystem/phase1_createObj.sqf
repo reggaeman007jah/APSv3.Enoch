@@ -11,7 +11,7 @@ deleteMarker "Point 1";
 deleteMarker "Point 2";
 deleteMarker "Point 3";
 
-// Mission Origin 
+// Patrol Stage Origin 
 deleteMarker "missionOrigin";
 _base = createMarker ["missionOrigin", RGG_missionOrigin];
 _base setMarkerShape "ELLIPSE";
@@ -54,7 +54,7 @@ _battleArea setMarkerAlpha 0.5;
 sleep 0.1;
 _battleArea setMarkerSize [1750, 1750];
 
-// OBJ - patrol objective 
+// OBJ - patrol stage objective 
 deleteMarker "Objective 1";
 _objective1 = createMarker ["Objective 1", RGG_patrol_obj];
 _objective1 setMarkerShape "ELLIPSE";
@@ -79,6 +79,7 @@ sleep 0.1;
 _objective1 setMarkerSize [450, 450];
 sleep 1;
 
+// generate defending opfor 
 execVM "autoPatrolSystem\phase2_createOpforWave1.sqf";
 systemchat "debug --- phase2_createOpforWave1 ACTIVATED";
 "MP debug --- phase2_createOpforWave1 ACTIVATED" remoteExec ["systemChat", 0, true];
