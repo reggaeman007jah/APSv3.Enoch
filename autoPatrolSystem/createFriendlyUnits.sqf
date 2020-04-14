@@ -1,4 +1,6 @@
-
+/*
+there is a lot of wet code here - consider making functions to issue move orders  
+*/
 sleep 3;
 
 _spawnPos = _this select 0;
