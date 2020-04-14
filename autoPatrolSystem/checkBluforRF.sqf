@@ -6,6 +6,10 @@ toDo / April 2002 / develop a better system to trigger RF
 Initial idea - run this same code but only at the start of each mission phase, rather than every 180 seconds!
 */
 
+/*
+
+// April 2020 / following code is switched off until new system is tested 
+
 while {true} do {
 
 	sleep 180;
@@ -25,3 +29,5 @@ while {true} do {
 		"MP debug --- friendly units created" remoteExec ["systemChat", 0, true];
 	};
 };
+
+*/
