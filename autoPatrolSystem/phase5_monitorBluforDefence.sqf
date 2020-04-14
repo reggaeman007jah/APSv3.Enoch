@@ -26,7 +26,7 @@ execVM "autoPatrolSystem\insuranceSystems\phase5Timer.sqf";
 
 while {monitorDefence} do {
 
-	_units1 = allUnits inAreaArray "BattleArea";
+	_units1 = allUnits inAreaArray "Objective 1"; // just trying this change out... april 2020
 	_unitCount = count _units1;
 
 	// _opfor = (side _x == opfor) inAreaArray "BattleArea";
@@ -64,6 +64,13 @@ while {monitorDefence} do {
 	{
 		systemChat "The Patrol has been Lost - Mission Failed.. ";
 		"The Patrol has been Lost - mission Failed..  " remoteExec ["systemChat", 0, true]; // make this better // MAYBE -1 PLATOON SCORE
+		lostPatrol = lostPatrol +1;
+
+		[RGG_patrol_obj, RGG_patrol_obj] execVM "autoPatrolSystem\phase1_createObj.sqf";
+		hint "restarting after patrol was wided out";
+		systemchat "debug --- phase1_createObj ACTIVATED";
+		"MP debug --- phase1_createObj ACTIVATED" remoteExec ["systemChat", 0, true];
+
 		// monitorDefence = false;
 		// end state FAIL - what happens here???
 	};

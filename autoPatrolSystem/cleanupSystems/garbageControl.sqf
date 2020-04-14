@@ -1,22 +1,22 @@
 // this will be given a location to create a temp marker - cleanup will then be applied in this marker area only
 
 
-
-_cleanupMarkerPos = _this select 0;
-sleep 300;
+// missionOrigin
+// _cleanupMarkerPos = _this select 0;
+// sleep 300;
 // _deadBodies = [];
 
 systemChat "get ready to check garbage...";
 sleep 5;
 
 
-_objective1 = createMarker ["garbageCollection", _cleanupMarkerPos];
-_objective1 setMarkerShape "ELLIPSE";
-_objective1 setMarkerColor "ColorYellow";
-_objective1 setMarkerSize [350, 350];
-sleep 3;
-{if ((getMarkerPos "garbageCollection" distance _x) => 450) then {deleteVehicle _x}} forEach allDead;
-deleteMarker "garbageCollection";
+// _objective1 = createMarker ["garbageCollection", _cleanupMarkerPos];
+// _objective1 setMarkerShape "ELLIPSE";
+// _objective1 setMarkerColor "ColorYellow";
+// _objective1 setMarkerSize [350, 350];
+// sleep 20;
+{if ((getMarkerPos "missionOrigin" distance _x) => 450) then {deleteVehicle _x}} forEach allDead;
+// deleteMarker "garbageCollection";
 /*
 ^^^ April 2020 UNTESTED 
 */
