@@ -60,7 +60,7 @@ if (_outcome == 3) then {
 	THREEPOINT = true;
 };
 
-_rndOp1 = selectRandom [20, 24, 26, 28, 30, 40]; // RF force size
+_rndOp1 = selectRandom [25, 30, 35, 40, 45, 50]; // RF force size
 
 switch (true) do {	
 	case (ONEPOINT): {
