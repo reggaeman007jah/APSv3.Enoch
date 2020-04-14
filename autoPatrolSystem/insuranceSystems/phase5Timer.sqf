@@ -10,7 +10,8 @@ for "_i" from 1 to 2 do {
 	systemChat "insurance move";
 
 	// this next bit is to ensure opfor dont get stuck somewhere and delay mission progression 
-// it used to be in a loop, now it only runs once (twice?)		
+	// it used to be in a loop, now it only runs twice
+
 	_opfor = [];
 	{if ((side _x) == east) then {_opfor pushBack _x}} forEach allUnits;
 
@@ -20,18 +21,19 @@ for "_i" from 1 to 2 do {
 		_moveTo = RGG_patrol_obj getPos [_Dist,_Dir]; 
 		_x setBehaviour "COMBAT";
 		_x doMove _moveTo;
-		systemChat "New OPFOR move orders";
+		systemChat "OPFOR insurance move orders";
 		sleep 1;
 	} forEach _opfor;	
-
 };
 
 if (monitorDefence) then {
 
 	hint "INSURANCE PROGRESSION";
+	// this system is untested! 
 	systemChat "Debug - we've been here long enough, let's move out .. !!!";
 	"MP debug - we've been here long enough, let's move out .. !!!" remoteExec ["systemChat", 0, true];	
 	monitorDefence = false;
+	patrolPointsTaken = patrolPointsTaken + 1;
 
 	// consolidate injured?
 	// [RGG_initStartPos, RGG_initStartPos] execVM "autoPatrolSystem\phase1_createObj.sqf";
@@ -54,7 +56,6 @@ if (monitorDefence) then {
 		_x setBehaviour "COMBAT";
 		_x doMove _endPoint1;
 	} forEach _units;
-
 };
 
 
