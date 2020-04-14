@@ -42,7 +42,7 @@ while {monitorDefence} do {
 		_moveTo = RGG_patrol_obj getPos [_Dist,_Dir]; 
 		_x setBehaviour "COMBAT";
 		_x doMove _moveTo;
-		systemChat "mooovin";
+		systemChat "New OPFOR move orders";
 		sleep 1;
 	} forEach _opfor;	
 
