@@ -76,6 +76,6 @@ systemchat "debug --- createFriendlyUnits.sqf running";
 sleep 0.2;
 
 // this launches the mission-specific params file 
-[RGG_initStartPos] execVM "autoPatrolSystem\autoPatrolSystemParams.sqf";
+execVM "autoPatrolSystem\autoPatrolSystemParams.sqf";
 systemchat "debug --- autoPatrolSystemParams.sqf running";
 "MP debug --- autoPatrolSystemParams.sqf running" remoteExec ["systemChat", 0, true];
