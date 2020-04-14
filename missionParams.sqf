@@ -67,3 +67,10 @@ VAA_FLR_Ammo_Reload = 1200;
 // trigger to manage reup (if true, then a countdown will occur before HE is back online):
 VAA_FLR_Reup_Active = false;
 // for now, do not change the above bool, and allow these from mission start
+
+/*
+I wonder if I could turn all of the above into local vars, and then send them as a param to another script, waiting to be activated.
+And after the first activation, run calcs to ensure that more locals are used to manage the reduced ammo. Might be nice to remove the globals if poss..
+
+
+*/
