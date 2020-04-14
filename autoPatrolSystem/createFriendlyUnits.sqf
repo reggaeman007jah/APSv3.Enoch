@@ -179,4 +179,4 @@ for "_i" from 1 to 1 do {
 	_unit doMove _endPoint1;
 };
 
-execVM "autoPatrolSystem\checkBluforRF.sqf";
+// execVM "autoPatrolSystem\checkBluforRF.sqf";
