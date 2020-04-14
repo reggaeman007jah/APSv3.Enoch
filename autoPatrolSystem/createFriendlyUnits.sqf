@@ -3,6 +3,8 @@ sleep 3;
 
 _spawnPos = _this select 0;
 
+systemChat "blu units being created - check perf";
+
 for "_i" from 1 to 8 do {
 	bluGroup = createGroup west;
 	_pos = [_spawnPos, 0, 60] call BIS_fnc_findSafePos;

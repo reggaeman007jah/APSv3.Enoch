@@ -1,4 +1,5 @@
 
+systemChat "op defenders being created - check perf";
 
 _rndOp1 = selectRandom [4, 6, 8, 10, 12];
 

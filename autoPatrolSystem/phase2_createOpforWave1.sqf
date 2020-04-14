@@ -1,6 +1,8 @@
 
 // create small opfor group at dest, or near dest, and send them to start, to engage patrol before they arrive at dest.. first wave 
 
+systemChat "op first wave units being created - check perf";
+
 _rndOp1 = selectRandom [6, 10, 14];
 
 for "_i" from 1 to _rndOp1 do {

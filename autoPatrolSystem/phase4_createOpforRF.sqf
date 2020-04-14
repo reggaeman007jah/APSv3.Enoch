@@ -46,6 +46,7 @@ from 8 different directions
 // work out waves later - for now keep things alternating attack / defend 
 
 hint "switch test";
+systemChat "op retaliatory attackers being created - check perf";
 
 _outcome = selectRandom [1,2,3]; 
 
