@@ -1,6 +1,6 @@
 
 /*
-Auto Patrol System v2 
+Auto Patrol System v3 
 
 April 2020
 This is an old project from 2018 I recovered and rebuilt from scratch.
@@ -29,9 +29,14 @@ The flow works like this:
 
 */
 
+// this file should run only once 
 sleep 2;
 systemchat "debug --- autoPatrolSystem.sqf running";
 "MP debug --- autoPatrolSystem.sqf running" remoteExec ["systemChat", 0, true];
+
+/*
+------- Base Setup ------- 
+*/
 
 // "ammo1" is a fixed 'named asset' in the mission itself - it is both the VA arsenal and also acts as a anchor point for the main Blufor base.
 // RGG_initStartPos is a location array (of the location of the ammo box)
@@ -58,7 +63,7 @@ sleep 1;
 // the above sequence provides a very basic marker animation on startup 
 
 // this takes the permaBase location as the first anchor (subsequent progress anchors will be different)
-// to do / April 2020 / work out why you used the same arg twice here 
+// -------------------------------------------- to do / April 2020 / work out why you used the same arg twice here --------------------------------------------
 [RGG_initStartPos, RGG_initStartPos] execVM "autoPatrolSystem\phase1_createObj.sqf";
 systemchat "debug --- phase1_createObj ACTIVATED";
 "MP debug --- phase1_createObj ACTIVATED" remoteExec ["systemChat", 0, true];

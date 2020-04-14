@@ -64,7 +64,7 @@ while {monitorDefence} do {
 	{
 		systemChat "The Patrol has been Lost - Mission Failed.. ";
 		"The Patrol has been Lost - mission Failed..  " remoteExec ["systemChat", 0, true]; // make this better // MAYBE -1 PLATOON SCORE
-		lostPatrol = lostPatrol +1;
+		lostPatrols = lostPatrols +1;
 
 		[RGG_patrol_obj, RGG_patrol_obj] execVM "autoPatrolSystem\phase1_createObj.sqf";
 		hint "restarting after patrol was wided out";
