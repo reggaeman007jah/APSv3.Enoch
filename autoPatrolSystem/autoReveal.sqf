@@ -1,4 +1,18 @@
-// helps to provide mission flow 
+/*
+This file is meant to (brute force) break any deadlock between the two factions 
+Mission flow used to be based on blu/opfor numbers, and progression would only happen if numbers fell to a low level 
+Given spawning and troop movement issues, sometimes units would be close but not see eachother, hence why this is used 
+
+This runs constantly in the bg (every 90 seconds) and forces opfor units (held in _opfor array) to move to the patrol objective 
+
+April 2020 
+I don't know how expensive this process is, and not also convinced this is needed now there is a mission phase timer running also.
+I need to decide whether the scrap the unit count altogether and just use time to progress the misison, or whether to use a hybrid 
+(i.e. use both, enabling a quicker move to next objecive of opfor are wiped out early)
+
+I also don't know if this system will affect the first wave attackers that are generated on each new patrol point 
+
+*/
 
 while {true} do {
 	_opfor = [];
