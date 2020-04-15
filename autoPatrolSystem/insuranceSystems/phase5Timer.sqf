@@ -3,11 +3,13 @@ April 2020 - untested
 This system does two things - first it tries (twice) to push opfor openly towards the objective, thereby preventing stalemate situations (prone v prone) 
 But it also ensures that if the above system does not work, the patrol will only wait 10 minutes at a point before moving onto the next point.
 */
+sleep 180;
 
-for "_i" from 1 to 2 do {
+for "_i" from 1 to 3 do {
 	
 	sleep 300;
 	systemChat "insurance move";
+	hint "insurance move";
 
 	// this next bit is to ensure opfor dont get stuck somewhere and delay mission progression 
 	// it used to be in a loop, now it only runs twice

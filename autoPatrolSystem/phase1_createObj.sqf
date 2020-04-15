@@ -79,6 +79,27 @@ sleep 0.1;
 _objective1 setMarkerSize [450, 450];
 sleep 1;
 
+// Patrol Stage Core 
+deleteMarker "missionCore";
+_base = createMarker ["missionCore", RGG_missionOrigin];
+_base setMarkerShape "ELLIPSE";
+_base setMarkerColor "ColorRed";
+_base setMarkerSize [10, 10];
+_base setMarkerAlpha 0.5;
+sleep 0.1;
+_base setMarkerSize [150, 15];
+_base setMarkerAlpha 0.6;
+sleep 0.1;
+_base setMarkerSize [20, 20];
+_base setMarkerAlpha 0.7;
+sleep 0.1;
+_base setMarkerSize [25, 25];
+_base setMarkerAlpha 0.8;
+sleep 0.1;
+_base setMarkerSize [30, 30];
+_base setMarkerAlpha 0.9;
+sleep 1;
+
 // generate defending opfor 
 execVM "autoPatrolSystem\phase2_createOpforWave1.sqf";
 systemchat "debug --- phase2_createOpforWave1 ACTIVATED";

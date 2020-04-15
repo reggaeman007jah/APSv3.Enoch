@@ -14,7 +14,11 @@ sleep 5;
 // _objective1 setMarkerColor "ColorYellow";
 // _objective1 setMarkerSize [350, 350];
 // sleep 20;
-{if ((getMarkerPos "missionOrigin" distance _x) => 450) then {deleteVehicle _x}} forEach allDead;
+{
+	if ((getMarkerPos "missionOrigin" distance _x) < 450) then {
+		deleteVehicle _x
+		};
+} forEach allDead;
 // deleteMarker "garbageCollection";
 /*
 ^^^ April 2020 UNTESTED 
