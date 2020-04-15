@@ -37,22 +37,22 @@ deleteMarker "BattleArea";
 _battleArea = createMarker ["BattleArea", RGG_patrol_obj];
 _battleArea setMarkerShape "ELLIPSE";
 _battleArea setMarkerColor "ColorBlack";
-_battleArea setMarkerSize [1050, 1050];
+_battleArea setMarkerSize [1000, 1000];
 _battleArea setMarkerAlpha 0.1;
 sleep 0.1;
 _battleArea setMarkerSize [1100, 1100];
 _battleArea setMarkerAlpha 0.2;
 sleep 0.1;
-_battleArea setMarkerSize [1150, 1150];
+_battleArea setMarkerSize [1200, 1200];
 _battleArea setMarkerAlpha 0.3;
 sleep 0.1;
-_battleArea setMarkerSize [1200, 1200];
+_battleArea setMarkerSize [1300, 1300];
 _battleArea setMarkerAlpha 0.4;
 sleep 0.1;
-_battleArea setMarkerSize [1250, 1250];
+_battleArea setMarkerSize [1400, 1400];
 _battleArea setMarkerAlpha 0.5;
 sleep 0.1;
-_battleArea setMarkerSize [1750, 1750];
+_battleArea setMarkerSize [1500, 1500];
 
 // OBJ - patrol stage objective 
 deleteMarker "Objective 1";
@@ -81,7 +81,7 @@ sleep 1;
 
 // Patrol Stage Core 
 deleteMarker "missionCore";
-_base = createMarker ["missionCore", RGG_missionOrigin];
+_base = createMarker ["missionCore", RGG_patrol_obj];
 _base setMarkerShape "ELLIPSE";
 _base setMarkerColor "ColorRed";
 _base setMarkerSize [10, 10];
