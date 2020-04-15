@@ -40,19 +40,19 @@ _battleArea setMarkerColor "ColorBlack";
 _battleArea setMarkerSize [1000, 1000];
 _battleArea setMarkerAlpha 0.1;
 sleep 0.1;
-_battleArea setMarkerSize [1100, 1100];
+_battleArea setMarkerSize [1200, 1200];
 _battleArea setMarkerAlpha 0.2;
 sleep 0.1;
-_battleArea setMarkerSize [1200, 1200];
+_battleArea setMarkerSize [1400, 1400];
 _battleArea setMarkerAlpha 0.3;
 sleep 0.1;
-_battleArea setMarkerSize [1300, 1300];
+_battleArea setMarkerSize [1600, 1600];
 _battleArea setMarkerAlpha 0.4;
 sleep 0.1;
-_battleArea setMarkerSize [1400, 1400];
+_battleArea setMarkerSize [1800, 1800];
 _battleArea setMarkerAlpha 0.5;
 sleep 0.1;
-_battleArea setMarkerSize [1500, 1500];
+_battleArea setMarkerSize [2000, 2000];
 
 // OBJ - patrol stage objective 
 deleteMarker "Objective 1";
