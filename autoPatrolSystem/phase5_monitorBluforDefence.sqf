@@ -121,6 +121,22 @@ while {monitorDefence} do {
 			_x setBehaviour "COMBAT";
 			_x doMove _endPoint1;
 		} forEach _units;
+
+		_baseBuilding1 = createVehicle ["Land_IRMaskingCover_02_F", getMarkerPos "missionOrigin", [], 30, "none"]; 
+
+		_damageTrigger = 0.4; // change this value to set what constitutes an evac-worthy injury level
+		_injuredBlufor = [];
+		{if ((side _x) == west) then {_injuredBlufor pushBack _x}} forEach allUnits;
+
+		// _readyInjured = allUnits inAreaArray "medivac";
+		{
+			_inj = getDammage _x;
+			if ((_inj) >= _damageTrigger) then {
+				_x doMove _fobPos;
+				systemChat "injured ready for pickup";
+			};
+		} forEach _injuredBlufor;
+
 	};
 
 	sleep 60;
