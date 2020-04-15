@@ -15,7 +15,7 @@ sleep 5;
 // _objective1 setMarkerSize [350, 350];
 // sleep 20;
 {
-	if ((getMarkerPos "missionOrigin" distance _x) < 450) then {
+	if ((getMarkerPos "missionOrigin" distance _x) > 450) then {
 		deleteVehicle _x
 		};
 } forEach allDead;
