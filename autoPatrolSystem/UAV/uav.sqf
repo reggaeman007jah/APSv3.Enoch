@@ -1,11 +1,16 @@
 // for debugging only 
 
+/*
+	_opfor = [];
+	{if ((side _x) == east) then {_opfor pushBack _x}} forEach allUnits;
+*/
 mapOpen = false;
 
 showMapMarkers = 
   {
    _markers = [];
        {
+         
         _data = [];
         _markName = name _x;
         _mrk = createMarkerLocal [_markName, position _x];
@@ -38,9 +43,10 @@ showMapMarkers =
                   _marker setMarkerTypeLocal "mil_box";
                   _marker setMarkerPosLocal position _unit; 
                   _marker setMarkerSizeLocal [1.2, 1.2];
-                  _marker setMarkerColorLocal "COLORBLUE";
+                  _marker setMarkerColorLocal "COLORRED";
                   sleep 0.01;
                   _marker setMarkerSizeLocal [0.5, 0.5]; 
+                  deleteMarkerLocal _marker; 
 
 
                 };
