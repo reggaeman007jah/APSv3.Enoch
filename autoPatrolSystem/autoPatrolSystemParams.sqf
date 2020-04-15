@@ -28,4 +28,7 @@ reinforcementsCalled = 0;
 // base-counter var for tracking how many patrols have been totally wiped out while in-field 
 lostPatrols = 0;
 
+// bool to track if a patrol has been lost
+LOSTPATROL = false;
+
 // you could maybe also track mission time on each 'take' to track time for each mission point?

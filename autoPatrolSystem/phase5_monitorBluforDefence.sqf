@@ -67,6 +67,7 @@ while {monitorDefence} do {
 		execVM "autoPatrolSystem\reinforcementSystems\bluforRF.sqf";
 		systemchat "sending in fresh units to avenge the lost patrol";
 		"sending in fresh units to avenge the lost patrol" remoteExec ["systemChat", 0, true];
+		LOSTPATROL = true; // indicates patrol has been lost and RF will need to head in to take over // i.e. do not auto-progress via timer 
 
 		// this (below) did not work 
 		// [RGG_patrol_obj, RGG_patrol_obj] execVM "autoPatrolSystem\phase1_createObj.sqf";
