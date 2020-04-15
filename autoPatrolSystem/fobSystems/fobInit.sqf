@@ -1,0 +1,1 @@
+// each taken point will become a temp med centre .. all injured units will go to nearest and wait for exfil 
