@@ -29,6 +29,9 @@ systemchat "debug --- checking for blufor RF";
 "MP debug --- checking for blufor RF" remoteExec ["systemChat", 0, true];
 // this is one of two points where patrol reinforcements are considered - previously this was every 90 seconds, now it is more lean and cheap
 
+// redirects any units incorrectly send to the old point 
+execVM "autoPatrolSystem\insuranceSystems\phase3Timer.sqf";
+
 while {RFCHECK} do {
 	systemChat "RFCHECK perf check here";
 	_opforCount1 = 0;
