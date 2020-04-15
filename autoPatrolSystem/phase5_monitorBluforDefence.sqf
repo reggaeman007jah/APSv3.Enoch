@@ -85,8 +85,12 @@ while {monitorDefence} do {
 		_cleanupPos = RGG_patrol_obj; // this ensures that a snapshot of the location is sent to the cleanup script - a global var will always be the most current version and so will not suit this purpose 
 		[_cleanupPos] execVM "autoPatrolSystem\cleanupSystems\garbageControl.sqf";
 		systemchat "debug --- cleanup script triggered";
-		"MP debug --- cleanup script triggered" remoteExec ["systemChat", 0, true];
+		"MP debug --- cleanup script triggered" remoteExec ["systemChat", 0, true]; // find out if i need or do not need to parse this var to the garbage script?!
 		sleep 1;
+		// leave a treat at the won position (reusing the above local var cos why not?)
+		[_cleanupPos] execVM "autoPatrolSystem\fobSystems\fobInit.sqf";
+		systemchat "debug --- cleanup script triggered";
+		"MP debug --- cleanup script triggered" remoteExec ["systemChat", 0, true];
 		systemChat "debug --- PATROL HAS CLEARED THE AREA";
 		"debug --- PATROL HAS CLEARED THE AREA" remoteExec ["systemChat", 0, true];
 		monitorDefence = false;

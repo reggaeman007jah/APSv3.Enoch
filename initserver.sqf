@@ -13,6 +13,11 @@ execVM "autoPatrolSystem\heliSystems\heliSystemsInit.sqf";
 systemchat "debug --- Heli Systems ACTIVATED";
 sleep 0.5;
 
+// initialise debug UAV
+execVM "autoPatrolSystem\UAV\uav.sqf";
+systemchat "debug --- UAV Systems ACTIVATED";
+sleep 0.5;
+
 // SF Manager
 //player addAction ["Pick up SF", "autoPatrolSystem\callSF.sqf"];	
 // player setVariable ["isBusy", 111]; // i.e. not busy and needs a task
