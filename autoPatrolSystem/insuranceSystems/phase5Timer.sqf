@@ -48,7 +48,7 @@ if (monitorDefence) then {
 
 	sleep 10; 
 	hint "patrol is moving out";
-	_units = allUnits inAreaArray "missionOrigin";
+	_units = allUnits inAreaArray "BattleArea";
 	{
 		_randomDir = selectRandom [270, 310, 00, 50, 90];
 		_randomDist = selectRandom [20, 22, 24, 26, 28, 30];
