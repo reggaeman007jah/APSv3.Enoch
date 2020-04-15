@@ -12,6 +12,7 @@ _damageTrigger = 0.4; // change this value to set what constitutes an evac-worth
 _injuredBlufor = [];
 {if ((side _x) == west) then {_injuredBlufor pushBack _x}} forEach allUnits;
 
+sleep 30;
 
 // _readyInjured = allUnits inAreaArray "medivac";
 {
