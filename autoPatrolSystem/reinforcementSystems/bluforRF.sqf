@@ -1,3 +1,7 @@
+/*
+This runs a check to see if blufor RF should be created and sent into the AO 
+It adds a RF score, so we can track how many RFs have been called in during the session 
+*/
 
 _bluCount = west countSide allUnits;
 // this is 18 to incorporate playable units and perma-base defences 
