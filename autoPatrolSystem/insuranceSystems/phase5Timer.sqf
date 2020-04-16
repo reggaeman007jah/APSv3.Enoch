@@ -32,11 +32,14 @@ for "_i" from 1 to 3 do {
 	} forEach _opfor;	
 };
 
+
 if (monitorDefence) then {
 
 	if (!LOSTPATROL) then {
 		// essentially this means that this next bit will only happen - the auto-progression - if the patrol has 'not' been lost 
 		// if the patrol 'has' been lost, and RF are inbound, then we pause this timer system
+
+		// important - add a check here to ensure that things dont progress if opfor is above a reasonable amount 
 
 		hint "INSURANCE PROGRESSION";
 		systemChat "Debug - we've been here long enough, let's move out .. !!!";

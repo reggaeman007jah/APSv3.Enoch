@@ -69,7 +69,7 @@ switch (true) do {
 			_pos = _pos1 getPos [50, _randomDir];
 			_rndtype = selectRandom ["o_g_soldier_ar_f", "o_g_soldier_gl_f", "o_g_sharpshooter_f", "o_soldieru_lat_f"];			
 			_unit = _grp createUnit [_rndtype, _pos, [], 1, "none"]; 
-			sleep 1;
+			sleep 0.3;
 			_moveTo = RGG_patrol_obj getPos [5, _randomDir]; 
 			_unit doMove _moveTo;
 		}; 
@@ -100,7 +100,7 @@ switch (true) do {
 			_pos = _posRandom getPos [50, _randomDir];
 			_rndtype = selectRandom ["o_g_soldier_ar_f", "o_g_soldier_gl_f", "o_g_sharpshooter_f", "o_soldieru_lat_f"];			
 			_unit = _grp createUnit [_rndtype, _pos, [], 1, "none"]; 
-			sleep 1;
+			sleep 0.3;
 			_moveTo = RGG_patrol_obj getPos [5, _randomDir]; 
 			_unit doMove _moveTo;
 		}; 
@@ -136,7 +136,7 @@ switch (true) do {
 			_pos = _posRandom getPos [50, _randomDir];
 			_rndtype = selectRandom ["o_g_soldier_ar_f", "o_g_soldier_gl_f", "o_g_sharpshooter_f", "o_soldieru_lat_f"];			
 			_unit = _grp createUnit [_rndtype, _pos, [], 1, "none"]; 
-			sleep 1;
+			sleep 0.3;
 			_moveTo = RGG_patrol_obj getPos [5, _randomDir]; 
 			_unit doMove _moveTo;
 		}; 
