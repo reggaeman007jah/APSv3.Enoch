@@ -6,6 +6,8 @@ _defendStartTime = time;
 systemChat format ["patrol defence started at %1 seconds into mission", _defendStartTime];
 */
 
+_smoke = createVehicle ["G_40mm_smokeYELLOW", RGG_patrol_obj, [], 0, "none"];
+
 systemChat "debug --- blufor moving into defensive positions"; 	
 "MP debug --- blufor moving into defensive positions" remoteExec ["systemChat", 0, true];
 
@@ -143,7 +145,5 @@ switch (true) do {
 		THREEPOINT = false;
 	};
 };
-
-_smoke = createVehicle ["G_40mm_smokeYELLOW", RGG_patrol_obj, [], 0, "none"];
 
 [_rndOp1, _outcome] execVM "autoPatrolSystem\phase5_monitorBluforDefence.sqf"; // pass in no. of enemy units / no. of origin points / vars to inform intel message
