@@ -1,4 +1,8 @@
 // for debugging only 
+/*
+This is a simple debug system that will cycle through each unit in-game, without diff between side and flash a little marker over their position 
+I took this from an old script, and will be deleted when I am happy with the logic flow and perf 
+*/
 
 /*
 	_opfor = [];
@@ -53,7 +57,7 @@ showMapMarkers =
 
 
 
-/*if ((!alive _unit) && (side _unit == east)) then
+                /*if ((!alive _unit) && (side _unit == east)) then
                 {
                   _marker setMarkerAlphaLocal 1;
                   _marker setMarkerTypeLocal "mil_box";
