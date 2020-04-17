@@ -33,4 +33,6 @@ There is no end state
 
 ---
 
-Blufor RF system just broke - find out reason and fix!!
+Blufor RF system just broke - this happened bc RF are called in only twice, once after taking the initial point and again checked as the opfor QRF heads in.
+This broke as the patrol was wiped before they took the initial point, creating a flow breakage
+To resolve - build a system that does a blufor count on a cycle, so if this is happening more often, reduce the number of RF created maybe to half ..
