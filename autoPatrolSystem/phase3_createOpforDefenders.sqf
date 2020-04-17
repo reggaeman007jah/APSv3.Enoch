@@ -33,9 +33,9 @@ for "_i" from 1 to _rndOp1 do {
 systemChat "op defenders spawn complete";
 
 // HERE WE CHECK IF BLUFOR NEED RF 
-execVM "autoPatrolSystem\reinforcementSystems\bluforRF.sqf";
-systemchat "debug --- checking for blufor RF";
-"MP debug --- checking for blufor RF" remoteExec ["systemChat", 0, true];
+// execVM "autoPatrolSystem\reinforcementSystems\bluforRF.sqf";
+// systemchat "debug --- checking for blufor RF";
+// "MP debug --- checking for blufor RF" remoteExec ["systemChat", 0, true];
 // this is one of two points where patrol reinforcements are considered - previously this was every 90 seconds, now it is more lean and cheap
 
 // redirects any units incorrectly send to the old point 

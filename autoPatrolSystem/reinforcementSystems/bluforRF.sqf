@@ -3,16 +3,45 @@ This runs a check to see if blufor RF should be created and sent into the AO
 It adds a RF score, so we can track how many RFs have been called in during the session 
 */
 
-_bluCount = west countSide allUnits;
+// _bluCount = west countSide allUnits;
 // this is 18 to incorporate playable units and perma-base defences 
 
-if ((_bluCount) < 18)  then {
-	hint "REINFORCEMENTS ARE INBOUND";
-	systemchat "debug --- friendly units created";
-	"MP debug --- friendly units created" remoteExec ["systemChat", 0, true];
-	reinforcementsCalled = reinforcementsCalled + 1;
-	[RGG_initStartPos] execVM "autoPatrolSystem\createFriendlyUnits.sqf";
+
+	// hint str _blufor;
+
+sleep 20;
+
+while {true} do {
+
+	// _obj = getMarkerPos "Objective 1";
+	// _base = getMarkerPos "permaBase";
+	// _distance = _obj distance _base;
+	_bluCount = west countSide allUnits;
+	// systemChat format ["TOTAL BLUFOR UNITS: %1", _bluCount];
+	// systemChat format ["DISTANCE BETWEEN BASE AND POINT: %1", _distance];
+
+
+
+	// what are the distances we would trigger change in RF?
+	// 1KM = be worried when redZone = 10
+	// 2KM = be worried when redZone = 12
+	// 3KM = be worried when redZone = 14
+
+	if ((_bluCount) < 10)  then {
+		_blufor = [];
+		{if ((side _x) == west) then {_blufor pushBack _x}} forEach allUnits;
+
+		hint "REINFORCEMENTS ARE INBOUND";
+		systemchat "debug --- friendly units created";
+		"MP debug --- friendly units created" remoteExec ["systemChat", 0, true];
+		reinforcementsCalled = reinforcementsCalled + 1;
+		[RGG_initStartPos] execVM "autoPatrolSystem\createFriendlyUnits.sqf";
+	};
+
+	sleep 60;
 };
+
+
 
 /*
 Note, it is possible that a new platoon will be created and sent to the right place, but then the mission obj will change after the order is given 

@@ -9,7 +9,7 @@ this was needed as without it, RF would be sent to a position, then the actual o
 */
 sleep 180;
 
-for "_i" from 1 to 3 do {
+for "_i" from 1 to 5 do {
 	
 	sleep 300;
 	systemChat "insurance move";

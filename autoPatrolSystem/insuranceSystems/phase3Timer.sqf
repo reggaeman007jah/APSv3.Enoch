@@ -7,8 +7,8 @@ sleep 180; // no need to run this system straight away
 while {RFCHECK} do {
 
 	hint "BLU INSURANCE MOVE";
-	systemChat "Debug - redirecting all blu and op units to patrol obj during RFCHECK state !!!";
-	"MP debug - redirecting all blu and op units to patrol obj during RFCHECK state !!!" remoteExec ["systemChat", 0, true];	
+	systemChat "Debug - redirecting all blu units to patrol obj during RFCHECK state !!!";
+	"MP debug - redirecting all blu units to patrol obj during RFCHECK state !!!" remoteExec ["systemChat", 0, true];	
 
 	_units = allUnits inAreaArray "BattleArea";
 	{
@@ -24,3 +24,19 @@ while {RFCHECK} do {
 };
 
 // note this must ONLY be applied to blufor units!!!
+/*
+_opfor = (side _x == opfor) inAreaArray "BattleArea";
+
+
+
+	_blufor = [];
+	{if ((side _x) == west) && (inAreaArray "BattleArea") then {_blufor pushBack _x}} forEach allUnits;
+
+	{
+		_Dir = random 360;
+		_Dist = selectRandom [1, 5, 10]; 
+		_moveTo = RGG_patrol_obj getPos [_Dist,_Dir]; 
+		_x setBehaviour "COMBAT";
+		_x doMove _moveTo;
+		sleep 10;
+	} forEach _opfor;

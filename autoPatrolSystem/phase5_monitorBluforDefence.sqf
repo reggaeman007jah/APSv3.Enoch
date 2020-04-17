@@ -9,10 +9,10 @@ a certain time regardless of engagement.
 systemChat "debug --- phase 5 - defence"; 	
 "MP debug --- phase 5 - defence" remoteExec ["systemChat", 0, true];	
 
-// HERE WE CHECK IF BLUFOR NEED RF 
-execVM "autoPatrolSystem\reinforcementSystems\bluforRF.sqf";
-systemchat "debug --- checking for blufor RF";
-"MP debug --- checking for blufor RF" remoteExec ["systemChat", 0, true];
+// // HERE WE CHECK IF BLUFOR NEED RF 
+// execVM "autoPatrolSystem\reinforcementSystems\bluforRF.sqf";
+// systemchat "debug --- checking for blufor RF";
+// "MP debug --- checking for blufor RF" remoteExec ["systemChat", 0, true];
 
 // message to players regarding incoming opfor 
 _numberOfAttackers = _this select 0;
@@ -52,21 +52,22 @@ while {monitorDefence} do {
 	};
 
 	if (_blueforCount < _RGG_reinforcementTrigger)  then {
-		systemChat (format ["The Patrol has been compromised, with %1 units left in the fight. Reinforcements are inbound.. ", _blueforCount]);
-		"Patrol has been compromised. Reinforcements are inbound.. " remoteExec ["systemChat", 0, true]; // make this better
+		systemChat (format ["The Patrol has been compromised, with %1 units left in the fight. Reinforcements are needed.. ", _blueforCount]);
+		"Patrol has been compromised. Reinforcements are needed.. " remoteExec ["systemChat", 0, true]; // make this better
 		// [RGG_patrol_obj, RGG_missionOrigin] execVM "autoPatrolSystem\callRF.sqf"; // send RF units into area 
 		// PARADOP UNITS HERE!!!
 	};
 
 	if (_blueforCount <= 1)  then {
+		hint "LOST PATROL!!";
 		systemChat "The Patrol has been Lost .. ";
 		"The Patrol has been Lost ..  " remoteExec ["systemChat", 0, true]; // make this better // MAYBE -1 PLATOON SCORE
 		lostPatrols = lostPatrols +1;
 
-		// send in new units
-		execVM "autoPatrolSystem\reinforcementSystems\bluforRF.sqf";
-		systemchat "sending in fresh units to avenge the lost patrol";
-		"sending in fresh units to avenge the lost patrol" remoteExec ["systemChat", 0, true];
+		// send in new units - removed as i am exp with an auto check 
+		// execVM "autoPatrolSystem\reinforcementSystems\bluforRF.sqf";
+		// systemchat "sending in fresh units to avenge the lost patrol";
+		// "sending in fresh units to avenge the lost patrol" remoteExec ["systemChat", 0, true];
 		LOSTPATROL = true; // indicates patrol has been lost and RF will need to head in to take over // i.e. do not auto-progress via timer 
 
 		// this (below) did not work 
@@ -80,7 +81,7 @@ while {monitorDefence} do {
 	};
 
 	if (_opforCount <= 3) then {// loop ends when opfor is reduced to this number
-		hint "Well done, the patrol has held the position successfully and is now moving to the next point";
+		hint "WELL DONE !!! the patrol has held the position successfully and is now moving to the next point";
 		// trigger delayed cleanup 
 		_cleanupPos = RGG_patrol_obj; // this ensures that a snapshot of the location is sent to the cleanup script - a global var will always be the most current version and so will not suit this purpose 
 		[_cleanupPos] execVM "autoPatrolSystem\cleanupSystems\garbageControl.sqf";
@@ -123,6 +124,7 @@ while {monitorDefence} do {
 		} forEach _units;
 
 		_baseBuilding1 = createVehicle ["Land_IRMaskingCover_02_F", getMarkerPos "missionOrigin", [], 30, "none"]; 
+		_fobPos = getPos _baseBuilding1;
 
 		_damageTrigger = 0.4; // change this value to set what constitutes an evac-worthy injury level
 		_injuredBlufor = [];
