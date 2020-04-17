@@ -1,9 +1,16 @@
+/*
+This file creates dynamic markers 
+These markers are used to direct the flow-logic of the mission 
+"missionOrigin" - green - designates the start of any patrol mission - 
+"battleArea" - grey - main AO that can be used to direct all AO units - 
+"objective 1" - red - should be renamed really - main red area - used to control 
+"missionCore" - dark red - used to control units at center of patrol point 
+*/
 
-_sentPos = _this select 0; // objective point for any new mission 
+_sentPos 	= _this select 0; // objective point for any new mission 
 _sentOrigin = _this select 1; // starting point for any new mission
 
 RGG_missionOrigin = _sentOrigin;
-
 RGG_patrol_obj = [_sentPos, 600, 800] call BIS_fnc_findSafePos; // generate patrol obj between 600m and 800m away, and always over land 
 
 // delete any existing opfor RF points 

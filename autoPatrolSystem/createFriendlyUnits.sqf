@@ -1,9 +1,11 @@
 /*
 there is a lot of wet code here - consider making functions to issue move orders  
+by parsing a location in here i can easily gen blufor platoons from anywhere, but for now they are only spawning at the perma-base 
+maybe in future I can create FOBs which become remote spawn points 
+it would be good to enable logic so that the AI manages whether to build a spawnerFob 
 */
-sleep 3;
 
-// by parsing a location in here i can easily gen blufor platoons from anywhere, but for now they are only spawning at the perma-base 
+sleep 3;
 _spawnPos = _this select 0;
 
 systemChat "blu units being created - check perf";
