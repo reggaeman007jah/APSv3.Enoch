@@ -39,7 +39,7 @@ systemchat "debug --- checking for blufor RF";
 // this is one of two points where patrol reinforcements are considered - previously this was every 90 seconds, now it is more lean and cheap
 
 // redirects any units incorrectly send to the old point 
-// execVM "autoPatrolSystem\insuranceSystems\phase3Timer.sqf";
+execVM "autoPatrolSystem\insuranceSystems\phase3Timer.sqf";
 // I think this caused issues, so I removed it - so far so good 
 
 RFCHECK = true; 
