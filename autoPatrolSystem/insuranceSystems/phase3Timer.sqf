@@ -22,3 +22,5 @@ while {RFCHECK} do {
 	} forEach _units;
 	sleep 180;
 };
+
+// note this must ONLY be applied to blufor units!!!

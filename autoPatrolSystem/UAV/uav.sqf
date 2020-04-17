@@ -48,7 +48,7 @@ showMapMarkers =
                   _marker setMarkerPosLocal position _unit; 
                   _marker setMarkerSizeLocal [1.2, 1.2];
                   _marker setMarkerColorLocal "COLORRED";
-                  sleep 0.01;
+                  sleep 0.5;
                   _marker setMarkerSizeLocal [0.5, 0.5]; 
                   deleteMarkerLocal _marker; 
 

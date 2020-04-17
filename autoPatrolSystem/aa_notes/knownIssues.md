@@ -32,3 +32,5 @@ I don't yet know how to make injured units detach from the main platoon and stay
 There is no end state
 
 ---
+
+Blufor RF system just broke - find out reason and fix!!
