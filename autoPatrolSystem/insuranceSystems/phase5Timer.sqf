@@ -27,7 +27,7 @@ for "_i" from 1 to 5 do {
 		_moveTo = RGG_patrol_obj getPos [_Dist,_Dir]; 
 		_x setBehaviour "COMBAT";
 		_x doMove _moveTo;
-		systemChat "OPFOR insurance move orders";
+		// systemChat "OPFOR insurance move orders";
 		sleep 1;
 	} forEach _opfor;	
 };
